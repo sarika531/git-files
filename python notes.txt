@@ -1,0 +1,39 @@
+what is python..?
+
+- python is simple and easy
+-free and open source
+- high level laguage
+- developed by guido van rossum
+- portable
+
+
+varibles
+
+name =sarika
+age=23
+p
+----------------------------------------------------------------
+ 
+strings;
+
+string is a data type 
+str1="this is python programming laguaguge"
+str2='sarika'
+str3=""" this is string""" 
+
+basic opertaions 
+
+.concationattion
+
+"hello" +" worlds" -----> "helloworlds"
+
+len(string)
+
+--------------------------------------------------------------
+
+functions in python 
+
+block of statemnts thta perform a specfic task
+
+
+

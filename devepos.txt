@@ -1,0 +1,118 @@
+what is git?
+
+git is vcs(version control system) tool...
+
+why git?
+
+scm/vcm
+-----------
+
+scm---> source code mangement
+vcs---> version control system 
+ to maintain a multiple versions of a file or directory
+
+
+how we use git..?
+
+website
+----------
+example index.html--->on 24-08-2000 v1
+about home contactus
+ndex.html--->on 24-08-2000 v1
+about home contactus login signup   v2
+ while changinging versions using manually is tough so we tools 
+
+GIT STAGES:
+    
+ WORKING DIRECTORY
+       |
+       |
+  STAGING AREA
+       |
+       |
+   repository
+
+working directory:
+--> in this satge git is only aware of hving files in theproject
+--> modified meanbs that you have changed the file but have not committed
+
+Staging area;
+--> the staging area is like a rough draft space its where you can git add the version of a file
+ by using( git add)command the file will come in staging area
+ respository;
+it has all project realted data
+it contains the collection of the files and also history of changes made to those files have rtypes
+
+types of repos:
+.Local repo
+.central repo
+.remote repo
+
+
+
+vcs tools
+------------
+svn/p4/clear/git/bitkeeper
+
+
+free                    paid
+
+svn/git               stash?p4/clearcase
+
+why vcs?
+to track differnt versions of a file or directory use all programmers, devleopers,system,admis,deveops
+engerriers etc...
+
+it use in files called 
+example:all text based files..
+java,html,php, c etec...
+
+
+history
+----------------------------------
+1972 vcs started in 1972
+sccm(to track only one file)
+rcs(track multiple files but not dictornies.... and allows one user only)
+cvs(trackmultiple files and dictories...and allow one user only)
+2000  svn(track multiple files and directories..and allows multiple users)
+2005(by linus torvalds)
+
+svn                                    git
+-------------------------------------------------------------------------------
+->server-client based              every project is independent
+->you always need net connection   no need of continous net
+->eat more disk space more burdain  less disk space less burdain
+->centralized version control        disturbuted version control
+->backup need take on server         backup can be taken by any client
+
+which platform does it supports..?
+
+windows,linux,solaris.etc....
+
+___________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,16 +1,4 @@
 
 
 First of all, thank you for giving me this opportunity to introduce myself. My name is Chatla Sarika, and I am from Kamareddy, located in Telangana.
-Regarding my educational background, I completed my MCA at Aurora's PG College in Hyderabad. I completed my undergraduate degree at RK Degree and PG College in my hometown, Kamareddy, where I also finished my intermediate at Sree Sandeepani Junior College and SSC at Rainbow Model High School.
-Coming to my family background, we are a family of four: my mother, who is a housewife; my father, who is a businessman; my younger sibling, who is currently studying; and myself.
-My hobbies include dancing and watching movies. I have always been passionate about expressing myself through dance, and I enjoy exploring different genres of movies, which helps me relax and learn about various cultures and stories.
-During my academics, I worked on a project called "Student Marks Prediction Using Linear Regression." This project is essentially a machine learning project. In this project, I analyzed students' marks and study hours, and I predicted their performance using linear regression. The purpose of this project is to help both students and teachers calculate students' study hours and assess their learning capacity. Through this project, I gained significant experience in data analysis, model building, and performance evaluation.
-Another project I developed is "Prediction of Selling Price for Used Cars Based on Artificial Neural Networks (ANN)." I created a machine learning model using ANN to predict the selling prices of used cars. I collected and preprocessed extensive data on various features, including car age, mileage, brand, model, and additional specifications. I implemented feature engineering techniques to enhance the model's accuracy and predictive capability. The project aimed to provide a reliable tool for car buyers, sellers, and dealerships to estimate realistic selling prices based on market trends and vehicle attributes. This project allowed me to deepen my understanding of neural networks, data preprocessing, and the application of machine learning in real-world scenarios.
-Apart from academics, I am also certified in a data science with AI course where I acquired substantial knowledge in the field. This certification has equipped me with the skills necessary to tackle complex data science problems and apply AI techniques effectively.
-Thank you.
-
-
-
-
-
-
+R

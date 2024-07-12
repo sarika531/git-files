@@ -1,0 +1,831 @@
+java DSA  methods:
+
+java is object oriented programming laguagugge
+
+java= purely object oriented
+---------------------
+
+how java works..?
+           compiled         interperted
+source code------->bytecode------>machine code
+
+
+basic structure of java...
+------------------------------------
+public class main{
+       public statoc void main(string[]args){
+       System.out.println("hello world");
+}
+}
+ 
+data types:
+-----------------------
+2 data types we have primitive and non primitive
+
+1)primmitive data types
+byte [range-128 to 127]default value 0/ 1 byte
+
+short 2 bytes default value is o
+ 
+int   4bytes default value is 0
+
+float  4bytes default value is 0
+
+long   8 bytes default value is 0
+
+double 8 bytes  default value oo.od
+
+char 2 bytes
+
+boolean value can be true or flase
+default value is flase
+
+--------------------------------------------------------------------
+
+
+
+reading data 
+
+scanner s = new scanner(system.in)
+int a= s.nextInt();
+
+example:
+
+
+
+
+--------------------------------------------------------------------------
+strings
+
+string methods in java
+
+name length()---->returns lenth of the string name
+
+name.lowercase()--------> recturn the lower case values
+
+name.to uppercase()--------> return upper case values
+
+name.substring(int start)-----------> return a sub string from start index start index inducludes and end index excludes
+
+name.replace
+
+string
+
+string str =" geeks";
+
+string str = new string("geeks")
+
+
+String : introduction in jdk1.0 , immmuatble,threadsafe,high memory effeiency
+
+
+StringBuilder: introduction in jdk1.5 , mmuatble, not threadsafe effeienct memory space
+
+StringBufeer: introduction in jdk 1.0, mutable,threadsafe,less efficient
+___________________________________________________________________________________
+
+
+class GFG{
+       //method 1
+       //concatenates to string
+       public static void concat1(string s1)
+        {
+          s1 = s1+"forgeeks";
+        }
+        //method 2
+        //concatenates to string builder
+       public static void concat2(StringBuilder s2)
+         {
+          s2.appends("forgeeks");
+         }
+
+         /method 3
+        //concatenates to string buffer
+       public static void concat2(StringBuffer s2)
+         {
+          s2.appends("forgeeks");
+         }
+        //method 4
+        // driver method
+        public static void main(String[] args)
+         {
+           //custom input string
+           // String 1
+           String s1 = "Geeks"
+        
+
+
+
+realtional opertations in jb
+----------------------------------------------------------------------------
+
+selection sort:
+
+selection sort is select the minimums
+
+[13 46 24 52 20 9]
+0  1   2  3  4 5
+
+
+step 1 :[ 9 26 24 52 20 13]
+
+step 2:  [9 13 24 52 20 46]
+
+atep 3 : [9 13 20 24 52 46]
+
+step 4:  [9 13 20 24 52 46]
+
+step 5  : [9 13 20 24 46 52] 
+
+
+entering the minum and swapping the numbers it tooks 5 steps 
+
+here we have some logic for selection sort
+
+
+here the swap happend at index 0 AND MIN INDEX [ 0 , n-1]
+
+          swap happend at index 0 AND MIN INDEX [ 1 , n-1]
+
+          swap happend at index 0 AND MIN INDEX [ 2, n-1]
+
+ --> And so om up to 5 index  we get logic
+--------
+
+for(i=0; i<=n-2; i++){
+// minmum values 
+   for(j=i; j<n-1; j++)
+      {
+        if(arr[j]<arr[min]) min=j
+       }
+    swap(arr[min],arr[i]);
+}
+
+--------
+Here is an example of swap 2 numbers  let us take some logic here 
+
+for suppose we have arr[i] , arr[min]
+ let us take asume arr[i] is 15 and arr[min] is 12 now we have to swap
+so we have store in temp variables 
+
+temp = arr[min]
+\\arr[min]= 12 in temp 12 value is stored
+arr[min]=arr[i]
+arr[i]=temp
+--------------
+ ---------------------------------------------------------------------------------------------------------
+Bubble sort:
+
+push the max elemts to the last by adjacent sides
+
+13 ,46, 24, 52 ,20, 9.
+
+step 1: 13 ,46, 24, 20,9, 52[swap 46, 24 and 52, 20 and 9 and 52]
+
+Here sort the adject elements 13,46 and 46,24 and 24,52 and 52,20 and 20,9
+
+last element should maximum to min the array should be sorted
+
+sorted array
+
+[9 13 20 24 46 52]
+
+logic of this bubble sort:
+ [0 to n-1]
+ [0 to n-2]
+ [0 to n-3]
+ [0 to n-4]
+
+for(i=n-1; i>=1; i--)
+{
+  for(j=0;j<=i;j++)
+     {
+        if (a[j]>a[j+1]
+         swap
+}
+}
+
+------------------------------------------------------------------------------------------------------
+
+Insetion sort alogorihm;
+
+Take an element it places it on correct order
+
+-------------------------------------------------------------------
+
+merge sort:
+
+Quick sort;
+
+
+
+---------------
+
+sloving array problems logic 
+
+---------------------------------------------------------
+ what is an array..?
+
+----> declartion of array  int arr[] = new arr[6]
+
+
+largerst element in an array..?
+
+logic: arr[] = [3,2,1,,5,2]
+
+
+accessing the array let us take an example and solve 
+
+class GFG{
+      public sttic void main(string[] args)
+       {
+         //declares an arrays of integer.
+          int[]arr;
+         //allocating memory for 5 integer.
+           arr = new int[5];
+         //initialize the first elemts of the array
+            arr[1] =20
+
+         //accessing the elements of the specified array
+            for(int i =0\; i<arr.length,i++)
+                     System.out.println("element at index"  +i +" :"+ arr[i];
+        }
+     }
+
+
+Arrays of the objects in java
+
+student[] arr = new student[5];
+
+
+syntax:
+
+---datatype arrname;
+---datatype arrname[];
+---datatype[] arrname;
+
+
+let us take an example print an array size of an element
+
+class cfg
+     public sstic void main(string[] args) {
+           
+          int[] arr=new int[4];
+           // 4 is the size of arr
+          System.out.println("Array size:"+arr.length);
+        }
+
+}
+
+output :
+array size
+
+_________________________________________________________________________________________
+
+Multi dimensional array in java
+
+ declartion :
+
+int[][] int array = new int[10][20]; 
+
+int[][][] int array=new int[10][20][30];
+
+
+// java program to multidimensional array
+
+// Dirver class
+
+public class multidimensional{
+   // main function
+
+public static void main(string args[])
+  {
+     // declaring and initializing 2d array
+
+      int arr[][] = { { 2, 7, 9},{3,6,1},{7 , 4, 2} };
+
+      //printng 2d array
+       for(int i =0; j<3; i++){
+             for(int j = 0; j<3; j++)
+                   System.out.print(arr[i][j]+ "');
+ 
+       System.out.println();
+   }
+ }
+}
+
+output:
+
+2 7 9
+3 6 1
+7 4 2
+
+____________________________________________________________________________________
+                  
+
+passing arrays to methods
+
+
+public class test{
+   public static void main (string ags[])
+    {
+      int arr[] = { 3, 1, 2, 5. 4};
+
+      //passing array to ethod m1
+      sum (arr);
+    }
+ public static void sum(int[]arr)
+      {
+       //getting sum of array values
+       int sum= 0;
+        for (int i= 0; i<arr.length; i++)
+            sum+= arr[i];
+         System.out.println("sum of array values : " +sum);
+       }
+
+}
+
+
+sum = 15
+________________________________________________________________________________________________
+
+class objects for arrays
+
+
+class Test{
+
+    Public static void main(string args[])
+      {
+       int int array[] = new int[3];
+       byte bytearray[] = new byte[3];
+       short shortarray[] = new short[3];
+
+      // array of strings
+       strings[] str array = new string[3];
+_________________________________________________________________________________________________
+
+OOps concepts in java:
+
+Types of methods 
+1) pe defined method
+2) user_defiend method
+
+ways to crate a method 
+
+//insatnce method 
+ void method_name(){
+body//instance area
+}
+
+//static method:
+static void method_name(){
+body//static area
+}
+
+
+method calling:
+
+
+class Addition{
+
+//initially taking sum as 0
+//as we have not staeted computation
+int sum = 0;
+// method
+// to add two numbers
+public int addTwiInt(inta,intb)
+{
+//Adding two integers value
+sum = a+b;
+
+//return the values
+return sum;
+}
+
+
+}
+
+class GFG{
+
+public static void main(string[] args)
+{
+
+
+addition add = new Addition();
+int s= add.addTWOINT(1.2);
+
+//printing su of two numbers
+System.out.println("sum of two interger values:" + s);
+
+}
+
+
+}
+____________________________________________________________________________________________
+
+passing parameters to a method
+
+. passing an array to an arrugument
+. passing variable_arguments as an arugument
+. method overloading
+
+
+public class Example {
+
+// define instance vraibles
+private int number;
+private string name;
+// define accessor getter methods
+
+public int getNumber() {
+   return number;
+
+public string getName() {
+   return name;
+}
+
+
+__________________________________________________________________________________________
+
+
+Access modifiers in java
+
+-->private
+-->public
+-->protected
+-->default
+
+
+1) default access modifier
+
+package p1;
+//class geeks have default access modifier
+class geek
+{
+   void display()
+     {
+      System.out.println("Hello world");
+     }
+}
+
+2. private access modifier
+
+
+package p1:
+
+//class A
+
+class A{
+      Private void display()
+         {
+          System.out.println("Geeksfor grrks")
+          }
+}
+//class B{
+
+ClassB{
+Public static void main (string args[])
+{
+a obj = new A();
+//trying to access private method
+obj.display()
+
+}
+}
+
+
+
+3.protected access modifier
+
+
+package p1;
+
+//class A
+
+protected void display()
+   {
+      System.out.println("Geeks for geeks")
+   }
+}
+
+
+4.public access modifier
+
+
+package p1;
+Public class A
+{
+public void display()
+        {
+         System.out.println("Geeksforgeeks");
+         }
+}
+
+___________________________________________________________________________________________________________________
+
+
+java encapusaltion:
+
+it hidden the senstive data from the users to acheive this you must 
+>declare class varibles/attributes as private
+>provide public get set methods to access and update the value of a private varible
+
+
+let us take an example
+
+public class person{
+
+      private String name;//private = restricted access
+//getter
+      public String getName(){
+      return name;
+}
+//setter
+      public void setName(String newName) {
+      this.name = newName;
+   }
+}
+--------------------------------------------------------------
+
+java inheritance
+
+in java , it is possible to inherIT ATTRIBUTES AND METHODS FROM ONE CLASS TO ANOTHER. WE GROUP THE INHERITANCE CONCEPT INTO TWO TYPES
+
+.Subclass(child)-the class that onherate fom anothe rclass
+'super class(parent)-the class being inherited
+
+the inherite from class we use extends keyword
+
+
+
+
+java ploymorphisim
+
+polymorphisim means many forms and it occurs when we have many classes that are related to each other by inheritance
+
+like we specified in the previous inheritance let us inheriate attributes and methods from another class polymorphism uss those methods to 
+perform differnt tasks this allows us to perform a single action in differnt ways
+
+
+let us take an example and slove for the inheritance
+
+
+class Animal{
+   System.out.printl("the animal makes a sound");
+ }
+}
+
+class pig extends Animal{  
+        public void animalsound(){
+            System.out.println("the pig says :we wee");
+  }
+}
+
+class Dog extends Animal{
+       pulic void animalsound(){
+           System.out.ptintl("the dog says bow bow")
+      }
+  }
+}
+--------------------------------------
+
+java inner classes
+
+in java it is also possible to nestclasse( aclass within aclass).the purpose of nested classe is to group classe that
+belong together,which makes your code more readble and maintainable\\\
+
+
+
+class outerclass{
+   int x =10;
+class inner class{
+   int y= 5;
+   }
+}
+
+public class main{
+    public static void main(string[] args){
+    outerclass myouter = new outerclass();
+    outrclass.Innew class myinner= myOuter.new InnerClass():
+    System.out.println(my inner.y + myouter.x);
+  }
+}
+
+//output 15(5+10)
+-------------------------------
+
+->private inner class:
+
+an inner class can be private or protected if you dont want outside objects to accecc the inner class, declare the class as private:
+
+class OuterClass{
+    int x+10:
+private class InnerClass{
+    int y=5;
+  }
+}
+
+Static Inner class:
+
+class OuterClass{
+    int x= 10;
+   static class InnerClass{
+    int y = 5;
+  }
+}
+
+Public class Main{
+      public static void main(String[] args) {
+         Outerclass.InnerClass myInner = new Outerclass.InnerClass();
+         
+
+
+______________________________________________________________________________________________________________________
+
+java first program 
+
+
+public class Main{
+   public static void main(String[] args){
+         System.out.println("Hello world!");
+         }
+}
+
+here public means we can insilaize any were from the world .
+
+why we use static ..? 
+
+Because without creation object we can use static while executed the main function
+
+here void void is the return type
+
+
+how to compile this program
+... javac main.java
+... java main
+                          
+
+inputs in java:
+
+public class Main{
+     Public static void main(String[] args){
+          Scanner input = new Scanner(System.in);
+          }
+}
+
+syntax for loop:
+ for(intiliation: declaration; increment){
+System.out.println
+}
+
+syntax for while loop:
+ while(conditin){
+  // body
+}
+
+syntax do while loop:
+
+do{
+   System.out.println(n);
+  }while()
+
+______________________________________________________________________________
+
+functions in java:
+
+in java we have only pass by value we dont have pass by reference
+
+return_type nmae{
+   //body
+}
+
+scope:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[\  public void animalsound(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
