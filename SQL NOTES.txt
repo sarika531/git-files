@@ -1,0 +1,869 @@
+
+Logical operators:-
+
+AND,OR,NOT OPERATORS:
+
+*Display all the details of the employees whos name is jack and has salary below 2500..?
+
+Ans:    select*from employee 
+        where name='jack' and salary<2500;
+
+
+*find the records which has name equal yo"tom" and department equal to"tester"
+
+Ans:    select*from employee
+        where name ='tom' and department ='tester';
+
+*Display all the records of the employee whohas either name equal to jack or has salary below 2500
+
+Ans:    select*from employee
+        where name ='jack' or salary< 2500;
+
+*Display all the records of the employee who has either the name equal to tom or belongs to devloper department
+
+Ans:   select*from employee
+       where name ='tom' or department ='develper';
+
+*Display all the records which has department other than hr
+
+Ans:  select*from employee
+      where not department ='hr';
+
+*Display all the records which dont have salary less tha or equal to 3000
+
+Ans:   select*from employee
+       wheer not salary <=3000;
+--------------------------------------------------------------------
+Combination of AND ,OR NOT OPERATORS
+
+*Display all the details of those employee who has id less 107 and they shou;d either belong to department
+develpor or tester
+
+Ans:  select*from employeee
+      where id <107 and (department ='develper or department ='tester');
+
+*Display all the details of those employee department is other than hr and accounts
+
+Ans:   select*from emmployee
+       where not department='hr' and not departmet='accounts';
+------------------------------------------------------------------------
+
+BETWEEN IN OPERATOR:
+
+*sDisplay id  and name of the employee who has id between 103 and 107
+
+Ans:  select id, name from employees
+      wheer id between 103 and 107;
+
+
+*Display all the details of the employee whosw name is between a and j
+
+Ans:   select*from employee
+       where name between a and j;
+
+
+*Display id and name of the employee who has id other than the id between 103 and 107
+
+Ans:   Select id,name from employee
+       where id not between 103 and 107;
+
+*Display all the details of the employee whio has id 102,105,108,112
+
+Ans: select*from employeee
+     where id IN(102,105,108,112);
+
+*find id name and department of the employee who worked in hr or develpper department
+
+Ans: select id,name,department from employee
+     where department in('hr','develper');
+
+*Display all the detauls of the employee whos salary is not equal to 2000,5000 and 6000
+
+Ans: select*from employee
+     where salry NOT IN (2000,5000,6000);
+
+---------------------------------------------------------------------------------------
+
+*like operators and wlid charcters:
+
+1)like operator
+2)NOT like operator
+3)wild card charcter
+   .percentage(%)
+   .ubderscore(-_
+4)escape charcter
+
+--------------------------------------------------
+
+like operator:
+
+-This like opeartor is used with the where caluse to get a reuslt set the matches the given search pattern in column
+
+-Like operator can be used in the where clause of a select, insert,update or delete statement
+
+3)wlid card charcters 
+
+% : represents zero,one,or multiple charcters
+
+-:represent one character
+
+examples:
+
+*Display all the details of the employess whose name contains "u" in their names
+
+Ans:  select*from employee
+      where name like'%u%';
+
+
+*slect id , name and department from the employee table with a department that here"c at the third position
+
+Ans:  select id, name ,department from employee
+      where departments like '--c%';
+
+*select all employee with a name that follows the below condition
+1)the name must starts with the letter "s"
+2)the 3rd letetr of the name must be "a: and
+3)the second letter of name can be anything
+
+
+Ans: select*fro employee 
+     where name like's-a';
+
+Not like operator:
+
+*display id , name and dob of the employee whose dob is not in march month
+
+Ans :select id, name dob from employee
+     where dob not like '-03-%';
+
+
+Escape charcter:
+
+- the escape charcter is use dto escape the elidcard charcter such as the " % " , " - " from 
+the part of data
+
+-default value od escape charcter " \"
+
+-escape '!'
+
+
+___________________________________________________________________________________________________________________________
+
+Is NULL , AND IS NOT NULL OPERATORS
+
+1)IN SQL,null is both a values as well as keyword
+2)a filed with null values is a iled with no value
+3)its value is unknown
+4)a null value is differnt from 
+5)null is not a data type i sql
+
+*IS null operator
+
+*is null operator is used to test fro null values
+
+Q:Displau all the details of  the eployess whose salary is not avaliable
+
+ans;   select*from employess whee salary is null;
+
+Q:select id, name and department od the employee who doesnt belong to any department from employee table
+
+ans: select id , name, department from employee where department is null;
+
+
+is not null operator;
+
+
+Q: Display all the details of the employee whose salary is not null
+
+Ans:select*from employee where salary is not null;
+
+Q:Display all the detailsof the employee whose don is notnull
+
+Ans:select*from employee  where dob is not null;
+
+*if null function:
+
+Q: Display id , name and salary of the employee and if salary is null then display 0
+
+Ans: select id , name , if null(salary, 0) from employee;
+
+Q:Display id , name and salary of the employee  and if the salary is null then  display name of the employee
+
+Ans: select id, name, from salary from employee ;
+     select id , name if null(salary, name) from employee;
+
+
+---------------------------------------------------------------------------------
+
+Order by clause:
+
+1)order by caluse (one clause and multiple columns , with where clause)
+
+order by clause is used to sort the records in ascending and decding oreder by default
+
+Q:Display all the details of the employee with name sorted in asceding order from the employee table
+
+Ans:select*from empoyee order by name asc;
+
+Q:Display name department and salry as column name "income'with salary sorted in descendi ng order from employee table
+
+Ans:select name, department, salary as income from employee order by salary desc;
+
+Q:order by clause multiple column:
+
+Q:select id name, department and salry of the employee with department sorted in asceding order and salary in descending order;
+
+Ans: select id,name,department , salary from employee orde by department asc, salary desc;
+
+Q:get all the details of the employee who had id more than 105 and name should be sorted in ascending order
+
+Ans: select*from employee where id>105
+
+order by name asc;
+
+
+______________________________________________________________________________________________________
+
+* limit and offset clause
+*TOP CLAUSE 
+*FETCH FIRST N ROWS ONLY
+
+
+* LIMIT CLAUSE:
+
+THE LIMIT CLAUSE IS USED WITH SELECT STATement to restrict the numbe of rows to return in query result
+
+the limit clause accepts one or two aruguments
+
+*row-count
+*offset
+
+*the valuses of both aruguments must be zero or postive inetegers
+
+
+Q:retrive the top 5 records from the employee table
+
+Ans:select*from employee Limit 5;
+
+Q: retrive the 3 records starting from the 6th record from the  employee table
+
+Ans: slect*from emplaoyee limit 6,3;
+
+           or
+    
+   SELECT * FROM employee
+   ORDER BY some_column
+   OFFSET 5 ROWS
+   FETCH NEXT 3 ROWS ONLY;
+
+Q:write a quey to find the 3rd highest salary from the employee table
+
+Ans: select distinct salary from employee
+
+    where salary is not null order by asc limit 2, 1;
+
+or
+
+Ans: select slary from emloyee order by slary desc
+ limit 2,1;
+
+_______________________________________________________________________________________________________
+
+* top clause :
+
+select  top 3*from employee
+
+select top 50 percentages * from employee;
+
+
+*  fetch first n rows only 
+
+slect *from employee fetch first 4 rows only;
+
+Q: retrive 2 rows after 4th row
+
+Ans: select* from employee offeset 4 row fetch next 2 rows only
+
+____________________________________________________________________________________________________________
+
+* Aggregate functions:
+
+1)count()
+2)sum()
+3)avg()
+4)min()
+5)max()
+
+
+Q: write an sql query to count the total number of employee in the employee table
+
+Ans:select count(*) as table-employee from employee;
+
+Q; WRITE A SQL QUERY to get total no of unique department with a coloumn name "total_department" from employee table
+
+Ans: select count(distinct department) as total_department from employee;
+
+Q: retrive total monthlysalary paid to the employees from hr department
+
+Ans: select sum(salary) from employee where department =" hr";
+
+*Avg():
+
+Q: retrive the avg(salary) from employee as average-salary;
+
+
+
+q:find the minimum date of birth from the employee table
+
+Ans: select min(dob) from employee;
+
+
+q: find the maximum salary paid to employee in developer department from the employee table
+
+Ans:select max(salary)from employee where department ="developer;
+
+_________________________________________________________________________________________________________________
+
+Group by clause();
+
+group by statement is used for originizing or arranging data into gropus that have identical value for one or more columns
+
+group by clause is often used in agggreation function
+
+null values ARE CONSIDERD FOR GROPING PURPOSE
+
+
+Q:find the number of employee working in each department from the employee table
+
+Ans; select department count(*) from employee 
+      Group by depatment
+
+Q: find the sum of salary of each department from employee table and sort the rresult in ascending order by sum of salary
+
+Ans: select department sum(salary)from employee group by department order by sum(salary);
+
+Q:find the sum of the salary of each department from employee table except 'hr' department and department should not be null
+
+Ans: select department, sum(salary) from employee where department ='hr' and department is not group by departmnt;
+
+
+Q: find the number of employee who has same department find salary from employee table and sort the result by department in ascending
+order
+
+Ans: select department,salary count(*) from employee group by department, salary order by department (asc);
+
+
+_____________________________________________________________________________________________________________
+
+having clause:
+
+the having clause filter the groped rows 
+
+havingclause (one condition)
+
+having clause (multiple condition)
+
+having caluse(between operator)
+
+
+Q: find the number of employee working in each department as total-employee from the employee table and the no 
+of the employee should be more than one also sort the result by total employee
+
+Ans: select depart,ent count(*) as total employee from employee having tota; employee>1 order by total_employee
+
+
+
+
+Q:write sql query to calculate the total salry and the number of employees in 
+ each department where the total salary salary is more than 5000 and no of employee is other than 1
+
+Ans:select department sum(salary) count(*) from employee group by department
+havingsum(salary)>5000 and count(*) !=1;
+
+Q: write a sql query to retrive the total salary of the employees in each department of a company, where the total salary of each department
+
+falls between 2000 and 6000 and department filed is not null
+
+Ans;select department,sum(salary) from employee
+
+group by department. having sum(salary) between 2000 to 6000 where department is not null;
+
+
+_______________________________________________________________________________________________________________________
+
+*String functions:
+
+*built-in functions
+*user defined functions
+
+*built-in functions:
+
+1)Aggregate functions
+
+2)String functions
+
+3)numeric functions
+
+4)date and time functions
+
+5)conversion function
+
+*String functions:
+
+1)ASCII 
+
+this function is used to find the ascii value of charcter select ascll(charcter);
+
+2)concat:
+
+this function is used to add two words or strin g together
+
+ex: select column-name(s) concat(name.has id. id) as employee from employee
+
+3)concat-with separATOR:
+
+EX: this function is used to concatnate multple string together with a specifird separator 
+
+select department . concat-wsc-, id,name,department as concat-string from employee
+
+4)length:
+
+this function is used to find the leng of string (or) word
+
+slect lengthh(s)
+
+select id, name, length(name) as name_length from employee;
+
+5)upper or uscase:
+
+
+slect id, lower(name) as result from employee;
+
+6) replace:
+
+select replace ('xyz.com in)
+
+select id, name, replace(deparment, hr,human rescourse)as result from employee;
+
+
+7) revrese:
+
+this function is used to reverse a string 
+
+select id, reverse(name) as result from employee
+
+8) substring or substr:
+
+it extracts a portion of a string based on a specfied stroting position and length
+
+select id, name, substring(dob,1,4) as result from employee
+
+9)trim:
+
+remove a specfied character
+
+
+select trim (coding) as result leading
+
+
+10)right and left:
+
+return a specfied no of charcaters frpm the left side of a string right side
+
+
+select id, left(name , 2) as result from employee;
+
+
+*numeric functions:
+
+1)ABS: this function returns the absolute value of a number
+
+select Abs(-30.6);
+
+2)Round:
+
+this funcyion rounds a number to a specfied no of decimal places 
+
+select round(75.32644 , 2)
+
+3)cell or celling:
+
+returns the smallest integr greater than or equal to a number
+
+select cell(number);
+
+4)floor:
+
+returns the largest intger leass than or equal to anumber
+
+select floor(35.6);
+
+5)MOD:
+
+returns the remainder of the dision operations
+
+select mod(11 , 3)
+
+6)power:
+
+this function raises a number to as specified ower
+
+select power(4, 3);
+
+7)square root(sqrt)
+
+this function returns the squre root of a numbeer
+
+select sqrt(7);
+
+8)Greatest:
+
+it returns the greatest value from the provided list of columns
+
+select greatest(10,20,30,50);
+
+9)least 
+
+slect least(id , slary) from employee;
+
+10) Random:
+
+select rand();
+
+*Date/ time functins:
+
+1)current _date
+
+2)current_time
+
+3)current_timestamp:which includes date and time;
+
+1)select current-date();
+
+2)select current-time();
+
+3) select current_timestamp();
+
+*Date:
+
+select time(yyy-mm-dd t:t:);
+
+select month
+         year day mintuite seconds hours
+
+2)extract:
+
+extarct a secfic componet from a date, time or time stamp
+
+Q:return id, name and only the day from the date of birth of the employee as birth_day from the employee table
+
+Ans: select id , name, extract(day from dob) as birth-day from employee
+
+2)datediff
+
+calculates the differnces betweeen 2  dates or time stamp
+
+select date diff(_) AS DIFF
+
+3)TIME DIFF
+
+4)Date-add
+
+this function adds a time /date interat to a date or timestaamp
+
+
+Q: write a sql query to display id, name and dob from employee table also add 1 month to the dob of the employee as column bame upadted-date-of-birth
+
+Ans: select id, name ,add-date(dob, interrval month) as updated date of brth
+
+from employee
+
+
+5)date-sub:
+
+this function substracts a time/date intervals from a date (OR) time stamp
+
+write a sql query to display id, nameand the dob from the employee table also sunstract 3 years from the dob of the employees
+
+as column name updated date-of-birth
+
+ans:select id, name datesub(dob, inteval 3 year) as u[pdated-date-of borth)
+
+from employee;
+
+write a sql query to display id, name and thed ob from the employee table .also substract 3 year from the dob of the employees as column name updated date-of-birth
+
+ans: selecct id, name date sub(dob, iterval 3 year) as
+updated-date-of -birth from employee;
+
+6) date_format:
+
+display date/datetime datain differnt formates as string 
+
+display id, name andthe dob in the format(20th jan 2023) as new-dob from the employee table
+
+select id ,name date format
+
+Ans: select date-format('2023-05-20 
+
+
+
+conversion function:
+
+conversion function that allow you to explicity convert data from one type to another
+
+
+1)cast
+2)convert
+3)str-to-date
+4)date format
+
+
+
+1)cast:
+ the cast() functiion converts a value into the specified datatype
+
+select cast(emp-code as decimal) as new-code  from employee;
+
+2)convert:
+
+this function converts a value intlo the specified datatype or charcter
+
+select convert(emp-code, decimal) from employee;
+
+charcterset:
+
+* a charcter set in sql is a collection of charcters and symbols used to store and manipulate data in a database
+
+show charcterset:
+
+select convert(npnbet using utfrm by) as converted-string.
+
+3)Str-to-date:
+
+the Str-to date() function returns a date based on a string and a format
+
+select str-to date(8th june 2023. %D % m %y) as new-date;
+
+4)Date-format:
+
+Display date/time date data in differnt format as string 
+
+Display id, name and the dob in the format(20th jan 2023) as "new-dob" from the employee table
+
+select id, name date-format(dob,20th jan 2023 %D %b %y) as new -dob from employee
+____________________________________________________________________________________________________________________________________
+
+*set operations:
+
+set operations allow you to combine the results of the two or more select statement into a single result set
+
+based on set theory principles:
+
+1)union
+2)union all
+3)intersect
+4)minus or except
+
+*union:
+
+the union operator combine the results sets of two or more select statements into a single set results
+
+Q:write a sql query to return all the details of the employee from the employee and manger table also remove duplicate records
+
+select*from employee union select*from manger
+
+*union all:
+
+*except or minus:
+
+Q:write a sql query to fetch all the details of the employee who are not manager from the employee 
+
+*intersect:
+
+the intersect operator returns the common rows blw the result sets of two or more select statements
+
+write a sql query to return all the details of the employees from the employee table who are manger 
+
+Ans:select*from employee intersect 
+
+select*from manager
+________________________________________________________________________
+*introduction to joins:
+
+1)joins in sql
+2)relational tables 
+3)why use joins
+4)types of joins
+
+joins:
+types of joins:
+
+1)inner join
+2)natural join
+3)left join
+4)right join
+5)full join
+6)self join
+7)cross join or cartesian join
+
+
+* inner join:
+*inner join is a type of sql join that combines rows from two or more tables based on specified condition 
+
+*it returns only the rows where the join condition is true
+
+write sql query to retrive the employee id, name,salry with their department and manger name, stored by employee id, when considering the tables employee department and manger
+
+
+
+
+__________________________________________________________________________________________________
+
+STORED PROCEDURES:
+
+
+A stored procedure is a prepared sql code that you can save , sothe code can be resuses over aand over again\\
+
+so,if you have an sql query that you can write over and overagain, save it as a stored procedure , and then just call it to excecute it
+
+you can also pass parmaters to a stored procedured sothat the stores procedure can act based o the paramater vale(S) that is passaes
+
+stored procedure synatx:
+
+CREATE PROCEDURE PROCEDURE_NAME
+AS
+ASL_STATEMENT
+GO;
+
+Execute stored procedures
+
+EXCc producure_name;
+
+
+let us take an example of stored procedure:
+----------------------------------------------------------------------------------------------------------------------------------
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+for suppose  we have table like this how to implement on this table:
+
+create procedure Selectallcustomers
+as
+select*from customer
+go;
+
+execution of stored procedure:
+
+EXEC seelectallcustomers;
+
+
+this selects all records from the customer table
+
+------------------------------------------------------------------------------------------
+
+stored procedure with one parameter let us take an example:
+
+create procedure selectallcustomers @city nvarchar(20)
+as
+select*from customer where city =@city
+go;
+
+EXEC selectallcustomers @city ='london';
+
+----------------------------------------------------------------------------------------------
+
+stored procedures with multiple parametrs:
+
+create procedure selectallcustomers @city nvarchar(20),@postalcode navarchar(10)
+
+as
+select*from customer where city=@city and postalcode=@postalcode
+go;
+
+exec selectalllcustomers @city ='london', @postalcode='wal 1dp';
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
