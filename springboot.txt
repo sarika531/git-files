@@ -1,0 +1,788 @@
+************************Spring Boot*******************
+
+
+what is spring frame..?
+
+spring framwork is popular java jEE framwork  and for web application and enterprice applications
+
+
+---spring provides:
+
+-dependency injection
+-database transcation management
+-integration with other java framworks
+-web MVC framwork for buildling web applications
+
+
+--spring based applications have a lot of configuration
+
+***when we use spring mvc we need to configure
+  -componet scan
+  -Dispatcher servlet
+  -view resolver
+  -Web jars
+***when we use hibernate/jpa, we would need to cnfigure a
+   -datasource
+   -entity manger factory
+   -transcation manger
+***when we use cache
+   -cache configuration
+***when we use message queue
+   -Message queue configuration
+***when you use Nosql database
+   -Nosql database configuration
+
+
+
+--bascially spring boot will build top of springframwork
+
+ex:  spring boot
+         |
+     spring framwork
+
+spring boot is extention of spring framework
+______________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+******SPRING BOOT***
+--SPRING BOOT IS TO CREATATE PRODUCATION READY SPRING BASESD APPLICATION WITHOUT REQURING DEVELOPERS TO
+WRITE THE SAME BOILERPLATECONFIGURATION AGAIN AND AGAIN
+
+
+--spring boot suppports
+-spring boot starters
+-spring boot autoconfiguration
+-external configuration
+-spring boot actuator
+
+
+***spring boot autoconfigure
+spring boot auto configuration attempts to automatically configure your spring application
+based on the jar dependencies thta yoy have added.
+
+
+
+differnt ways to create spring boot project:
+
+1.using spring initializr
+2.using spring starter project in sts
+3.using boot CLI (comand line  tool)
+
+
+here spring-boot-starter-web used to crate:
+-spring web application
+-spring rest api application  
+
+<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+_______________________________________________________________________________________________________
+
+properties files:
+
+spring boot provides a rich set of application properties
+
+so we can use that in the properties files of out project
+
+the properties files is used to set propeties the server-port-8082 and many other serivers
+
+it helps to originaze application properties
+----------------------------
+
+yaml support
+
+it provides a convient way of specifying the hierachal configuration
+
+it suports of json
+
+the springbootapplication class automatically supports yaml
+
+it is an alternative to the properties files
+
+---------------------------------------
+
+logging
+
+spring boot uses common logging for all internal logging
+
+logging dependencies are manged by default
+
+we should not change logging dependencies if no customion is needed
+
+----------------------------------------------
+
+security
+
+spring boot applications are spring bases web application
+
+so it is secure by default with basic authenction of all http endpoints
+
+a rich set of endpoint is available to devlop a secure a spring boot application
+
+--------------------------------------
+
+
+spring boot architeture :
+
+
+we have four layers in spring boot
+
+.presentation layer[Authencation and json translation] or controller
+
+.bussiness layer[bussiness logic , vadlidation authorisation]
+
+.perssistance layer[Storage logic]
+
+.database layer[Actual database]
+
+-------------------------------------------
+
+***presentation layer:
+
+the prsentation layer handles the http requests,translates json parameters to an object, authencate the request,
+and transfer it to the bussiness layer
+
+in short, it consist of view the fronted part
+
+***Bussiness layer:
+
+the bussiness layer handls all the business logic
+
+it consist of serivce clases and uses services provided by data accaess layer
+
+it also performs authorzation and valdation
+
+***persistance layer:
+the persistance layer contains all the storge logic and transfer bussiness objects from and to dtaabase rows
+
+
+***Database layer:
+in the dtaabse layer crud (create,retrive,updaye,delete)operations are performed
+
+________________________________________________________
+
+
+
+***************************************SPRING BACKEND COURSE*************************************************
+
+
+
+
+the architecture of spring boot is the same as the architecture of spring mvc, expect for onething
+
+there is no need for dao and daoimpl classes in spring boot
+
+creates a data accaess layer and performs crud operation
+
+the client makes the http request(put or get)
+
+the request goes to the controller and controller maps the request and handles it after that it calls the serivce
+
+logic if required
+
+in the serivce layer all the busiiness logic perform  it performs
+the logic on the data that is mapped to jpa with model classes
+
+_________________________________________________________________________________________________
+
+
+the spring boot work flow:
+
+The client makes the http requests
+
+this request goes to the controller and the controller maps and handles it
+
+the request is passed on the serivce layer where all the bussiness logic is erformed on the data that is mapped to jps
+
+with model classes
+
+as a result a response is returned to the user if no error occured
+----------------------------------------------------------------------------------------------
+
+creation of spring boot project in 3 ways 
+
+1)spring intializer
+2)spring 
+3)
+
+________________________
+
+
+****spring boot and spring mvc (rest annotations)****
+
+
+ 1)  @RequestMapping:it is used map web requests 
+
+it has many optional elements like consumes, header, method, name,params,path,produces,and value
+
+we use it with the class as well as with the method
+
+ example: @controller
+          public class Books controller
+          { 
+           @RequestMapping("/computer-science/books")
+          public string getAllBooks(Model model)
+          {    
+            return "booklist";
+           }
+
+
+
+2) @GetMapping : it maps the http get request on the specfic handler method it is used to create a web service endpoint
+that fetches it is used instead of using:@
+
+3)@PostMapping:it maps the http post requests on the specfic handler method it is used to create a web service endpoint
+ that creates it is used instead of using@RequestMapping(method=RequestMethod.post_)
+
+4)@PutMapping:it maps the http put requests on the specfic handler method it is used to create a web service endpoint
+that creates or updates it is used instead of using :@Requestmapping(method=Requestmethod.put)
+
+5)@DeleteMapping:it maps the http delete requests on the specfic handler method.it is used to create
+a web serivce endpoint that delete a resource . it is used instead of using @RequestMapping =RequestMethod.Delete)
+
+
+6)@RequestBody: it is used bind the http requests with an object in mehod
+
+7)@responseBody: it bind the method returns the value to the response body it tells the spring boot framework to serizaliation return a 
+object into json and xml format
+
+8)@PathVariable: it is used to extract the values from the url. it is most suitable for the restful web services , where the url
+contains a path varible . we can define multipled @pathvarible in a method
+
+9)@RestController: conbination of both @Respnse body @Controller
+
+
+-------------------------------------------------------------------------------------------------------
+
+Spring boot application properties:
+
+spring boot framwork comes with a built-in mechanisim for application configuration using a file
+
+called appliaction.properties
+
+it is located inside the src/main/resources folder.
+
+Spring boot provides various properties that can be configured in the application.properties file
+
+The properties have default values. we can set a property for spring boot application
+
+Spring Boot also llows us to define our own property if requried
+
+---------------------------------------------------------------------------------------------------------------
+
+ex: #configuration application name
+ 
+spring.applicatio.name = demo application
+
+#configuring port
+
+server.port =8081
+
+--------------------------------------------------------------------------
+
+yaml properties file:
+
+spring boot provides another file to configure the properties called yml file
+
+the yaml file works because the snake yaml jar is present in the classpath
+
+instead of using the application.properties.file,
+
+we can also use the application.yml.file, but the yml file should be preset in the classpath
+
+ex:
+      Spring:
+      application:
+      name.demo.application
+      
+      server
+      port:8080
+
+--------------------------------------------------------------------------------------------------
+
+Spring boot property categories:
+
+there are some categories of spring boot property are as follows:
+
+.core properties
+.cache properties
+.mail properties
+.json properties
+......
+
+
+____________________________________________________________________________________________________________
+
+Spring Boot Rest concept:
+
+All kinds of applications can be desigined using spring boot
+
+for web applications spring bot provides built in web servers(tomcat)
+
+spring boot is openionated
+
+many things are auto configured each application can have its own server
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+Rest : representational state tranfer data recevied from the server depends on url
+
+       Url represents a particular page whenever we change url display to a new page
+
+Data formats:xml format
+             json format
+
+
+
+
+XML format:  
+           <employee>
+                   <empid> 100 </empid>
+                   <empname> 'sarika' </empname.
+           </employee>
+
+
+xml file is quite bulky thats why using json
+
+
+
+
+
+json format: java script object notation 
+ 
+
+single object:{"empid"; 10."name", "saddam"}
+
+multiple object:[  
+
+                    {"empid"; 10."name", "saddam"}
+                    {"empid"; 10."name", "saddam"}
+                    {"empid"; 10."name", "saddam"}
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+for creating a local host in the web by using localhost:808/hello/hai
+
+
+created a two packages in the spring
+
+1st package and class
+package com.exam;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application1Application.class, args);
+		System.out.println("hello");
+	}
+
+}
+
+
+
+
+
+
+2nd package and class
+
+
+package com.exam.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/hello")
+public class HelloController {
+	@GetMapping("/hai")
+	public String  dummmy() {
+		return ("hello wlecome to spring boot learing and further configuration");
+		
+	}
+	
+	
+	
+
+}
+
+
+-----------------------------------------------------------------------------------
+
+spring boot by using lamboc dependency:
+
+
+by using lon=mbok dependency we need to use getter setter and constructurs
+
+withe simple @Data annonation it will create all those in lombok
+
+@NoArgsConstructor
+@Data
+@Entity
+public class Employee {
+	
+	private String employeename;
+	private Double empsalaary;
+
+}
+-------------------------------------------------------------------------------------
+ 
+connection spring boot project to postman and sql server
+
+>src/main/resources:
+  >application properties
+
+spring.datasource.url=jdbc:mysql://localhost:3306//newdb [//connection to sql with database name]
+spring.datasource.username=root  [username]
+spring.datasource.password=Sarika$876 [password]
+
+spring.jpa.show-sql=true  [this command i sis used for sql coomand used to display in our console]
+
+spring.jpa.show-sql=true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl.auto=update
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
+
+
+these four are defaultpropeties in application properties
+
+
+
+_______________________________________________________________________________________________________________
+
+
+in spring boot project we have create sperates classes for evry indiviual packages
+
+especiallay in spring boot we have four packages
+
+1)Entity: 
+
+entity is noting but it is a java file where entity have 
+tables ,colums , and data menbers
+
+
+package com.employee.Entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@Table(name ="student-db")
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student {
+	
+   @jakarta.persistence.Id
+   @GeneratedValue
+	@Column(name ="10")
+	private int Id;
+    
+	@Column(name = "std-marks")
+	private int marks;
+	
+	@Column(name ="Name")
+	private String name;
+
+    
+
+}
+
+
+
+in this way we will create tables colums and names and datamenbes in entity package inside entity
+package we will create a class inside entity 
+
+
+-------------------------------------------------------------
+2)repoistory
+
+package com.employee.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentRepo extends JpaRepository<Student ,Integer>{
+
+}
+
+in repoistory we can perform curd operations or in entity operation if performns in repoistory
+
+here in < class name , data type of primary key>
+
+
+---------------------------------------------------------------------------
+3)serivce :
+
+serive does it allow all post get fetch methods in serivce
+
+we cannot acces the entity directly with help of repoistory of tables or datamembers we can acces
+
+
+package com.employee.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.employee.Entity.Student;
+import com.employee.Repository.StudentRepo;
+
+@Service
+public class StudentService {
+
+	@Autowired
+	private StudentRepo studentRepo;
+	
+	public Student saveDetails(Student student) {
+		
+		return StudentRepo.save(student);
+		
+	}
+}
+-----------------------------------------------------------------------------------------------------------------
+
+4)controller:
+
+the main purpose of the controller is defing the path or route 
+
+in post man operations 
+
+
+package com.employee.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.employee.Entity.Student;
+import com.employee.Service.StudentService;
+
+@RestController
+public class StudentController {
+	
+	
+	@Autowired
+	private StudentService StudentService;
+	@PostMapping("/addstudent")
+	public Student PostDetails(@RequestBody Student student)
+	{
+		return StudentService.saveDetails(student);
+	}
+
+}
+
+---------------------------------------------------------------------------------------------------
+
+Spring boot data jpa:
+
+with databse communation spring boot jpa is used for communation with database
+
+create with annotations
+@Entity
+@id
+@oneToone
+@@one to many etc.......
+
+
+and we need tp provide database details in aplication.properties file
+
+--------------------------------------------------------------------------------------------------------
+
+
+*Spring Boot exception handling:
+
+
+@controllerAdice : it is the class which handles all the exceptions in application it can have methods to handle differnr exceptions
+
+when exception happens or occures anywhere in the application controller advice is handling
+
+in controller advice class we need to write
+
+@ExceptionHandle(Studentnotfoundexception.class) annotation in each method
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+Spring data validation :
+
+check the data sent by the client
+
+client sends the data in json format
+
+json is translated into java object in the controller
+
+while translating we needto check the data 
+
+
+
+Steps:-
+
+add validation depndency
+
+use validation annotations in entity classes
+
+in the controller use @valid annotation along with @RequestBody
+
+@valid annotations makes it possible to check the validation errors
+
+if validation fails methods arugument not valid exception is thrown
+
+controller advice should hanldes these exceptions
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+questions:
+
+1) what is the use of @controllerAdvice Annotation?
+ans: t is the class which handles all the exceptions in application it can have methods to handle differnr exceptions
+
+
+2) what is the use of @valid annotation?
+
+ans:@valid annotations makes it possible to check the validation errors
+
+
+
+____________________________________________________________________________________________________________________
+
+***Spring Boot Actuator***:
+
+>is a sub-project of the sprig boot framework
+>it includes a number of additional feautures that help us to monitor and mange the spring Boot application
+>it contains the actutor endpoints[the place where the resource live]
+
+
+
+*we can use Http and jmx endpoints to mange and monitor the spring Boot application
+
+if we want to get producation-ready feautures in an application , we should use the spring boot actutor
+
+Spring Boot Actutor features
+
+there ar 3 main feautures of spring boot actutor:
+
+Endpoints
+
+metrics
+
+Audit
+
+
+***Endpoints: 
+The actitor endpoints allows us to monitor and interact withe application.
+Spring Boot provides a number of built-in endpoints. we can also create our own endpoint
+we can enable and disable each endpoint individually
+
+most of the application choose http, where the id of the endpoint, along with the prefix of/actuator, is
+
+mapped to a url
+
+for example , the/health endpoint provides the basic health information of an application
+
+the actuator, by default, mapped it to/actuator/health
+
+
+***metrics:
+
+spring boot actuator provides dimensional metrics by integrating with the micrometer.
+
+the micrometer is integerated into spring boot
+
+it is the instrumention libray powering the devlivery of application metrics from spring.
+
+if provides vendor-neutral interface  for timers , gauges, counters disturbution
+
+
+
+
+
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________________________________
+Fetch all the data in mysql database using spring boot and postman(REST API)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
